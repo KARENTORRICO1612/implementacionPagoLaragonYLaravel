@@ -1,5 +1,5 @@
 <div>
-    <h2>{{$title}} {{$name}}</h2>
+    <h2>{{ $title }} {{ $name }}</h2>
 
 
     @if(session()->has('message'))
@@ -7,12 +7,18 @@
     <p>{{session('message')}}</p>
 
     @endif
-
+    
     @foreach ($tasks as $t)
+      @livewire('list-task', ['task' => $t], key($t->id))
+    @endforeach
+
+    {{-- @foreach ($tasks as $t)
     </div>
         <p>{{ $t->name }}</p>
     </div>
-    @endforeach
+    @endforeach --}}
+
+    <hr>
 
     <p>{{$name}}</p>
 
@@ -20,8 +26,9 @@
 
     {{-- <input wire:model.debounce.10ms="name" type="text"> --}}
     <input wire:model="name" type="text">
-    {{-- <button wire:click="addTask">Agregar</button> --}}
-    <button wire:click="addTask2({{ $name }})">Agregar</button>
+    <button wire:click="addTask">Agregar</button>
+    {{-- <button wire:click="addTask2('Fernando')">Agregar</button> --}}
+    {{-- <button wire:click="addTask2({{ $name }})">Agregar</button> --}}
     {{-- <input wire:keydown.enter="addTask" wire:model="name" type="text"> --}}
     {{-- <button wire:click="$set('name','Fernando')">Agregar</button> --}}
 </div>

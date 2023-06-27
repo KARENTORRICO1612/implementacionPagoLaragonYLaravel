@@ -12,7 +12,10 @@ class Counter extends Component
     public $name;
     public $title;
 
-    public function mount($title){
+
+    protected $listeners = ['deleteTask'];
+
+    public function mount($title){ 
         $this->title = $title;
     }
 
@@ -31,11 +34,11 @@ class Counter extends Component
         session()->flash('message','Tarea se ha eliminado');
         Task::destroy($id);
 
-        return redirect()->route('about');
+        // return redirect()->route('about');
     }
 
     public function updating($name, $value){
-        
+        // dd($value);
     }
 
     public function render()

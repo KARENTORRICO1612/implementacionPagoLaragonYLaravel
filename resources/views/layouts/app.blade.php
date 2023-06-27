@@ -36,6 +36,12 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
+
+                        <li class="nav-item">
+                            <livewire:cart/>
+
+                        </li>
+
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -76,5 +82,9 @@
             @yield('content')
         </main>
     </div>
+
+    @livewireScripts
+
+    <script src="https://use.fontawesome.com/293dbc87e8.js"></script>
 </body>
 </html>
