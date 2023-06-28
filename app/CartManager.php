@@ -24,6 +24,11 @@ class  CartManager
         return $this->cart->products()->wherePivot('id',$productId)->detach();
     }
 
+
+    public function getAmount(){
+        return $this->cart->products()->sum('price');
+    }
+
     public function getCart(){
         return $this->cart;
     }
@@ -53,5 +58,10 @@ class  CartManager
     private function findSession()
     {
         return request()->session()->get($this->sessionName);
+    }
+
+    public function deleteSession()
+    {
+        return request()->session()->forget($this->sessionName);
     }
 }

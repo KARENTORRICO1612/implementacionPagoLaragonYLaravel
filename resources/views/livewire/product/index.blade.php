@@ -5,7 +5,7 @@
     <div class="alert alert-success alert-dismissible" role="alert">
         {{ session('message') }}
 
-
+    @endif
         <button type="button" class="close" data-dismiss="alert" arria-label="Close">
 
             <span aria-hidden="true">&times;</span>

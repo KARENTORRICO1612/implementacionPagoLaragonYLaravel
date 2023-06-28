@@ -11,11 +11,11 @@ Route::get('/', function () {
     return view('welcome',compact('title'));
 });
 
-Route::get('/about', function () {
+Route::get('/', function () {
 
-    return "About";
+    return view('welcome');
 
-})->name('about');
+})->name('welcome');
 
 Auth::routes();
 
@@ -25,7 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/crear','product.create')->name('products.create')->middleware('admin');
 
 
-//Route::get('/productos/{product}', 'products.show')->name('products.show');
+Route::get('/productos/{product}', 'products.show')->name('products.show');
 // Route::livewire('/checkout','checkout')->name('checkout');
 
 Route::get('/paypal/payment', 'PaymentController@paypalPaymentRequest')->name('paypal.payment');
