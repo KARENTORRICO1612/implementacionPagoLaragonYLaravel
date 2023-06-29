@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
 use App\CartManager;
 use App\Mail\ConfirmationShopping;

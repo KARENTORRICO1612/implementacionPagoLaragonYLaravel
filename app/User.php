@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -32,13 +32,6 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
-
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-
 
     protected $casts = [
         'email_verified_at' => 'datetime',

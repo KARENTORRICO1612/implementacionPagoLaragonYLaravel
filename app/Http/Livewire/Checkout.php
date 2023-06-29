@@ -30,8 +30,10 @@ class Checkout extends Component
 
     public function render()
     {
-        return view('livewire.checkout', [
-            'products' => $this->cart->products
-        ]);
+        // return view('livewire.checkout', [
+        //     'products' => $this->cart->products
+        // ]);
+
+        return view('livewire.checkout');
     }
 }

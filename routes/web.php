@@ -1,8 +1,12 @@
 <?php
 
+use App\Http\Livewire\Checkout;
 use App\Http\Livewire\Create;
+use App\Http\Livewire\Product\Show;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
+Auth::routes();
 
 Route::get('/', function () {
 
@@ -17,16 +21,21 @@ Route::get('/', function () {
 
 })->name('welcome');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // Route::get('/crear',[Livewire\Product\Create::class])->name('products.create')->middleware('admin');
-//Route::get('/crear','product.create')->name('products.create')->middleware('admin');
+Route::get('/crear',Create::class)->name('products.create')->middleware('admin');
 
 
-Route::get('/productos/{product}', 'products.show')->name('products.show');
-// Route::livewire('/checkout','checkout')->name('checkout');
+Route::get('/productos/{product}', Show::class)->name('products.show');   
+
+
+// Route::get('producto/{product}', 'products.show')->name('products.show'); ---> EDICION 1
+// Route::get('products',Producto::class);
+// Route::get('books/{id}', [BooksController::class, 'destroy'])->name('books.destroy'); ---> EJEMPLO DE INTERNET
+
+
+ Route::get('/checkout',Checkout::class)->name('checkout');
 
 Route::get('/paypal/payment', 'PaymentController@paypalPaymentRequest')->name('paypal.payment');
 Route::get('/paypal/checkout/{status}', 'PaymentController@paypalCheckout')->name('paypal.checkout');

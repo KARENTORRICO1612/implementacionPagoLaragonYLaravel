@@ -33,10 +33,10 @@
                         </thead>
 
                         <tbody>
-                            @foreach($productos as $producto)
-                            <td>{{ $product->id }}</td>
-                            <td>{{ $product->name }}</td>
-                            <td><button class="btn btn-danger" wire:click="deleteProduct('{{ $product->pivot->id }}')">Eliminar</button></td>
+                            @foreach($productos as $product)
+                                 <td>{{ $product->id }}</td>
+                                 <td>{{ $product->name }}</td>
+                                 <td><button class="btn btn-danger" wire:click="deleteProduct('{{ $product->pivot->id }}')">Eliminar</button></td>
                             @endforeach
 
                             <tr>

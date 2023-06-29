@@ -11,7 +11,7 @@ class Show extends Component
     public $product;
 
    public function mount(Producto $product){
-        $htis->product= $product;
+        $this->product= $product;
    }
 
     public function render()

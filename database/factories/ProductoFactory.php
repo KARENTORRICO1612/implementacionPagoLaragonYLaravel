@@ -26,5 +26,4 @@ class ProductoFactory extends Factory{
             'thumbnail' => "https://picsum.photos/550/600"
          ];
     }
-
 }

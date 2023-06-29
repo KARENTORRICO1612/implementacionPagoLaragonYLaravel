@@ -12,7 +12,8 @@ class ShoppingCart extends Model
     use HasFactory;
 
     public function amount(){
-        return $this->products->count();
+        dd('hola');
+        // return $this->products->count();
     }
 
     public function products(){
