@@ -1,24 +1,27 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
+use App\Producto;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Str;
+
 
 class ShoppingCart extends Model
-{
+ {
     use HasFactory;
 
     public function amount(){
-        dd('hola');
-        // return $this->products->count();
+       
+        return $this->products->count();
     }
 
     public function products(){
-        return $this->belongsToMany(Many::class)->withPivot('id');
+        // return $this->belongsToMany(Many::class)->withPivot('id');
+
+        return $this->belongsToMany(Producto::class);
     }
+
 }
 
 

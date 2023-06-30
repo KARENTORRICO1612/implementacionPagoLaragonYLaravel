@@ -38,8 +38,7 @@
                         <!-- Authentication Links -->
 
                         <li class="nav-item">
-                            <livewire:cart/>
-
+                            <livewire:cart />
                         </li>
 
                         @guest

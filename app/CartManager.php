@@ -2,7 +2,7 @@
 
 namespace App;
 
-use App\Models\ShoppingCart;
+use App\ShoppingCart;
 
 class  CartManager
 {
@@ -10,11 +10,12 @@ class  CartManager
 
     private $cart;
 
-    public function _construct(){
+     public function __construct(){
         $this->cart = $this->findOrCreate($this->findSession());
     }
 
     public function addToCart($productId){
+        //dd('hola');
         $product = $this->getProduct($productId);
         $this->cart->products()->attach($product->id);
     }

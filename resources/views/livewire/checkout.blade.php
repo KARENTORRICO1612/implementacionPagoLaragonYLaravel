@@ -9,7 +9,6 @@
              </button>
 
         </div>
-
     @endif
     
     <h2 class="text-center">Resumen productos</h2>
@@ -33,7 +32,7 @@
                         </thead>
 
                         <tbody>
-                            @foreach($productos as $product)
+                            @foreach($products as $product)
                                  <td>{{ $product->id }}</td>
                                  <td>{{ $product->name }}</td>
                                  <td><button class="btn btn-danger" wire:click="deleteProduct('{{ $product->pivot->id }}')">Eliminar</button></td>

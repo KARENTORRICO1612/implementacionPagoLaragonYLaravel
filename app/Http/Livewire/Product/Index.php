@@ -11,6 +11,7 @@ class Index extends Component
 
     public function addToCart(CartManager $cart, $productId)
     {
+        //dd('hola');
         $cart->addToCart($productId);
 
         session()->flash('message','Producto agregado al carrito de compras');
