@@ -1,3 +1,7 @@
+
+@extends('layouts.app')
+
+@section('content')
 <div>
     
     @if(session()->has('message'))
@@ -9,6 +13,7 @@
              </button>
 
         </div>
+
     @endif
     
     <h2 class="text-center">Resumen productos</h2>
@@ -29,6 +34,7 @@
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Eliminar</th>
                             </tr>
+                            <br>
                         </thead>
 
                         <tbody>
@@ -49,4 +55,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> 
+@endsection

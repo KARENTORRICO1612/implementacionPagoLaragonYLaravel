@@ -35,7 +35,7 @@ Route::get('/productos/{product}', Show::class)->name('products.show');
 // Route::get('books/{id}', [BooksController::class, 'destroy'])->name('books.destroy'); ---> EJEMPLO DE INTERNET
 
 
- Route::get('/checkout',Checkout::class)->name('checkout');
+Route::get('/checkout',Checkout::class)->name('checkout');
 
 Route::get('/paypal/payment', 'PaymentController@paypalPaymentRequest')->name('paypal.payment');
 Route::get('/paypal/checkout/{status}', 'PaymentController@paypalCheckout')->name('paypal.checkout');
