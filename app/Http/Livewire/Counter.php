@@ -34,7 +34,7 @@ class Counter extends Component
         session()->flash('message','Tarea se ha eliminado');
         Task::destroy($id);
 
-        // return redirect()->route('about');
+         return redirect()->route('about');
     }
 
     public function updating($name, $value){

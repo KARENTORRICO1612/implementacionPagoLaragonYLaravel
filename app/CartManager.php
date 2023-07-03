@@ -22,6 +22,7 @@ class  CartManager
 
     public function deleteProduct($productId)
     {
+       
         return $this->cart->products()->wherePivot('id',$productId)->detach();
     }
 

@@ -3,9 +3,9 @@
 namespace App;
 
 
-use PayPalCheckoutSdk\Core\PayPalHttpClient;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use PayPalCheckoutSdk\Core\PayPalHttpClient;
 use PayPalCheckoutSdk\Core\SandboxEnvironment;
 use PayPalCheckoutSdk\Orders\OrdersCaptureRequest;
 use PayPalCheckoutSdk\Orders\OrdersCreateRequest;
@@ -18,7 +18,7 @@ class Paypal
     private $client;
 
     public function __construct() {
-        $this->client = new PayPayHttpClient (
+        $this->client = new PayPalHttpClient(
             new SandboxEnvironment(config('services.paypal.key'),config('services.paypal.secret'))
         );
     }
@@ -61,11 +61,11 @@ class Paypal
 
             return $approvalUrl;
 
-            dd($response);
+            // dd($response);
             
         }catch(\PayPalHttp\HttpException $ex)
         {
-            dd($ex);
+             dd($ex);
         }
     }
 
@@ -79,7 +79,23 @@ class Paypal
 
             // return $response;
         }catch(HttpException $ex){
-            dd($ex);
+             dd($ex);
         }
     }
 }
+
+        // SEGUNDO VIDEO
+        return[
+
+            'client_id' => env(key:'PAYPAL_CLIENT_ID'),
+            'secret' => env(key:'PAYPAL_SECRET'),
+
+            'settings' => [
+                'mode' => env(key: 'PAYPAL_MODE', default:'sandbox'),
+                'http.ConnectionTimeout' => 30,
+                'log.LogEnabled' => true,
+                'log.FileName' => storage_path(path:'/logs/paypal.log'),
+                'log.LogLevel' => 'ERROR'
+            ]
+        ];
+

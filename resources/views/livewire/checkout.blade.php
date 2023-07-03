@@ -1,21 +1,22 @@
+{{-- @extends('layouts.app')
 
-@extends('layouts.app')
+@section('content') --}}
 
-@section('content')
+
 <div>
-    
+
     @if(session()->has('message'))
-        <div class="alert alert-sucess alert-dismissible" role="alert">
-             {{ session('message') }}
+    <div class="alert alert-sucess alert-dismissible" role="alert">
+        {{ session('message') }}
 
-             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-             </button>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
 
-        </div>
+    </div>
 
     @endif
-    
+
     <h2 class="text-center">Resumen productos</h2>
 
     <div class="row">
@@ -25,23 +26,27 @@
             <div class="card">
 
                 <div class="card-body">
-                
+
                     <table class="table text-center table-bordered">
 
                         <thead>
                             <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">Eliminar</th>
+                                <th scope="col">#</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Eliminar</th>
                             </tr>
-                            <br>
                         </thead>
 
                         <tbody>
                             @foreach($products as $product)
-                                 <td>{{ $product->id }}</td>
-                                 <td>{{ $product->name }}</td>
-                                 <td><button class="btn btn-danger" wire:click="deleteProduct('{{ $product->pivot->id }}')">Eliminar</button></td>
+                            <tr>
+                                <td>{{ $product->id }}</td>
+                                <td>{{ $product->name }}</td>
+                                {{-- <td><button class="btn btn-danger" wire:click='deleteProduct'>Eliminar</button>
+                                </td> --}}
+                                <td><button class="btn btn-danger"
+                                        wire:click="deleteProduct('{{ $product->pivot->id }}')">Eliminar</button></td>
+                            </tr>
                             @endforeach
 
                             <tr>
@@ -55,5 +60,6 @@
             </div>
         </div>
     </div>
-</div> 
-@endsection
+</div>
+
+{{-- @endsection --}}

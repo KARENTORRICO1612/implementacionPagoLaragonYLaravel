@@ -17,9 +17,9 @@ class ShoppingCart extends Model
     }
 
     public function products(){
-        // return $this->belongsToMany(Many::class)->withPivot('id');
+        return $this->belongsToMany(Producto::class)->withPivot('id');
 
-        return $this->belongsToMany(Producto::class);
+        // return $this->belongsToMany(Producto::class);
     }
 
 }

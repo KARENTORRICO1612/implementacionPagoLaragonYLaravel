@@ -6,6 +6,9 @@ use App\Http\Livewire\Product\Show;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+
+
+
 Auth::routes();
 
 Route::get('/', function () {
@@ -37,5 +40,13 @@ Route::get('/productos/{product}', Show::class)->name('products.show');
 
 Route::get('/checkout',Checkout::class)->name('checkout');
 
-Route::get('/paypal/payment', 'PaymentController@paypalPaymentRequest')->name('paypal.payment');
+Route::get('/paypal/payment', [App\Http\Controllers\PaymentController::class, 'paypalPaymentRequest'])->name('paypal.payment');
+
+Route::get('/paypal/pay', 'PaymentController@payWithPayPal');
+Route::get('/paypal/status', 'PaymentController@payPalStatus');
+// Route::get('/paypal/payment', 'PaymentController@paypalPaymentRequest')->name('paypal.payment');
 Route::get('/paypal/checkout/{status}', 'PaymentController@paypalCheckout')->name('paypal.checkout');
+
+//Payment SEGUNDO VIDEO
+//Route::get(url:'/paypal/pay2', admin:'PaymentController@payWithPayPal2');
+Route::get('/paypal/pay2','App\Http\Controllers\PaymentController@payWithPayPal2');

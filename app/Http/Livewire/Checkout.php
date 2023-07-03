@@ -15,6 +15,7 @@ class Checkout extends Component
 
     }
 
+
     public function deleteProduct(CartManager $cart, $productId)
     {
         $cart->deleteProduct($productId);
@@ -32,7 +33,7 @@ class Checkout extends Component
     {
         return view('livewire.checkout', [
             'products' => $this->cart->products
-        ]);
+        ])->extends('layouts.app')->section('content');
 
         // return view('livewire.checkout');
     }

@@ -7,10 +7,20 @@ use Illuminate\Http\Request;
 use App\Paypal;
 
 use App\CartManager;
-use App\Models\Order;
+use App\Order;
+use Illuminate\Support\Facades\Config;
+
+#SEGUNDO VIDEO
+use PayPal\Auth\OAuthTokenCredential;
+use Paypal\Rest\ApiContext;
 
 class PaymentController extends Controller
 {
+
+   #SEGUNDO VIDEO
+    private $apiContext;
+    #FIN INICIO DEL SEGUNDO VIDEO
+
     public function paypalPaymentRequest(CartManager $cart, Paypal $paypal)
     {
         return redirect()->away($paypal->paymentRequest($cart->getAmount()));
@@ -33,5 +43,23 @@ class PaymentController extends Controller
                 return redirect()->route('welcome');
             }
         }
+    }
+
+    // SEGUNDO VIDEO
+    public function __construct()
+    {
+
+        $payPalConfig = Config::get(key:'paypal');
+
+        $apiContext = new ApiContext (
+            new OAuthTokenCredential(
+                $payPalConfig['client_id'],     //ClienteID
+                $payPalConfig['secret'],        //ClientSecret
+            )
+        );
+    }
+
+    public function payWithPayPal2(){
+        return '123';
     }
 }
