@@ -12,7 +12,8 @@ use Illuminate\Support\Facades\Config;
 
 #SEGUNDO VIDEO
 use PayPal\Auth\OAuthTokenCredential;
-use Paypal\Rest\ApiContext;
+use PayPal\Rest\ApiContext;
+
 
 class PaymentController extends Controller
 {
@@ -44,22 +45,22 @@ class PaymentController extends Controller
             }
         }
     }
+    
 
-    // SEGUNDO VIDEO
-    public function __construct()
-    {
+    // public function payWithPayPal2(){
+    //     return '123';
+    // }
 
-        $payPalConfig = Config::get(key:'paypal');
+    // // SEGUNDO VIDEO
+    // public function __construct()
+    // {
+    //     $payPalConfig = Config::get(key:'paypal');
 
-        $apiContext = new ApiContext (
-            new OAuthTokenCredential(
-                $payPalConfig['client_id'],     //ClienteID
-                $payPalConfig['secret'],        //ClientSecret
-            )
-        );
-    }
-
-    public function payWithPayPal2(){
-        return '123';
-    }
+    //     $apiContext = new ApiContext(
+    //         new OAuthTokenCredential(
+    //             $payPalConfig['client_id'],     //ClienteID
+    //             $payPalConfig['secret'],        //ClientSecret
+    //         )
+    //     );
+    // }
 }

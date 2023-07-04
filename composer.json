@@ -12,7 +12,8 @@
         "laravel/tinker": "^2.8",
         "laravel/ui": "^4.2",
         "livewire/livewire": "^2.12",
-        "paypal/paypal-checkout-sdk": "1.0.1"
+        "paypal/paypal-checkout-sdk": "1.0.1",
+        "paypal/rest-api-sdk-php": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

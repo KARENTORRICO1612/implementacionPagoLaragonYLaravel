@@ -4,7 +4,7 @@ namespace App;
 
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+// use Illuminate\Database\Eloquent\Model;
 use PayPalCheckoutSdk\Core\PayPalHttpClient;
 use PayPalCheckoutSdk\Core\SandboxEnvironment;
 use PayPalCheckoutSdk\Orders\OrdersCaptureRequest;
@@ -24,9 +24,9 @@ class Paypal
     }
 
     public  function paymentRequest($amount){
-        $request = new OrdersCreateRequest ();
+        $request = new OrdersCreateRequest();
 
-        $request->prefer('return=presentation');
+        $request->prefer('return=representation');
 
         $request->body = [
             "intent" => "CAPTURE",
@@ -61,7 +61,7 @@ class Paypal
 
             return $approvalUrl;
 
-            // dd($response);
+             dd($response);
             
         }catch(\PayPalHttp\HttpException $ex)
         {
