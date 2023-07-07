@@ -1,4 +1,18 @@
  
+    <div>
+
+        @if(session()->has('message'))
+    
+        <div class="alert alert-success alert-dismissible" role="alert">
+            {{ session('message') }}
+            <button type="button" class="close" data-dismiss="alert" arria-label="Close">
+    
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    
+        @endif
+    
     {{-- AÑADIENDO CARRUSEL --}}
     <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">

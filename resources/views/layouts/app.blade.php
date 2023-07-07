@@ -20,7 +20,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md " style="background-color: #5E72E4;" >
             <div class="container" >
-                <a><img  src="https://uploads-ssl.webflow.com/63bdb3d2bcdc8434481e2da0/63cbeccffeacbc461bff97c7_logo%20horizontal.svg" loading="lazy" width="120px"  height="40px" alt="" class="image-59"></a>
+                <a href="{{ url('/') }}" ><img  src="https://uploads-ssl.webflow.com/63bdb3d2bcdc8434481e2da0/63cbeccffeacbc461bff97c7_logo%20horizontal.svg" loading="lazy" width="120px"  height="40px" alt="" class="image-59"></a>
         
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -53,17 +53,6 @@
                                     <a class="nav-link" style="color: #ffffff" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
-
-                            {{-- IMPLEMENTACION DEL CARRITO  --}}
-                            <li>
-                                <div>
-                                    <form class="d-flex" role="search">
-                                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                        <button class="btn btn-outline-success"  style="background-color: #5E72E4" style="color: #ffffff" type="submit"> <svg width="20" height="20" class="DocSearch-Search-Icon" style="color:#ffffff" viewBox="0 0 20 20"><path d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                                        </button>
-                                      </form>
-                                </div>
-                            </li>
 
                         @else
                             <li class="nav-item dropdown">
