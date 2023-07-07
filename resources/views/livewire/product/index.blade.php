@@ -1,34 +1,18 @@
-<div>
-
-    @if(session()->has('message'))
-
-    <div class="alert alert-success alert-dismissible" role="alert">
-        {{ session('message') }}
-        <button type="button" class="close" data-dismiss="alert" arria-label="Close">
-
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-
-    @endif
-
+ 
     {{-- AÑADIENDO CARRUSEL --}}
     <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://www.kreedon.com/wp-content/uploads/2022/10/high-gaming-pc.jpg" class="d-block w-100" height="800px" width="100%"
-                background-color="rgba(0,0,0,0.8)"  
-                alt="...">
+                <img src="https://www.kreedon.com/wp-content/uploads/2022/10/high-gaming-pc.jpg" class="d-block w-100"
+                    height="800px" width="100%" background-color="rgba(0,0,0,0.8)" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://www.pcworld.com/wp-content/uploads/2023/04/IMG_20190615_214330.jpg?quality=50&strip=all&w=1024" height="800px" width="100%"
-                background-color="rgba(0,0,0,0.8)"    
-                class="d-block w-100" alt="...">
+                <img src="https://www.pcworld.com/wp-content/uploads/2023/04/IMG_20190615_214330.jpg?quality=50&strip=all&w=1024"
+                    height="300px" width="100%" background-color="rgba(0,0,0,0.8)" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://image.coolblue.be/1248x535/content/e111e2396926a48e16264f916113e07f"  height="800px" width="100%"
-                background-color="rgba(0,0,0,0.8)"
-                class="d-block w-100" alt="...">
+                <img src="https://image.coolblue.be/1248x535/content/e111e2396926a48e16264f916113e07f" height="300px"
+                    width="100%" background-color="rgba(0,0,0,0.8)" class="d-block w-100" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -41,13 +25,65 @@
         </button>
     </div>
     {{-- FIN DEL CARRUSEL --}}
-    </br>
+
+
+    {{-- INICIO DE MENU BAR DE SECCIONES --}}
     <div>
-    <a href="https://www.google.com">  Categoria | </a>
-    <a href="https://es.shein.com/new/-sc-00200200.html">Novedades | </a>
-    <a href="https://www.amazon.com/-/es/gp/goldbox"> Ofertas | </a>
-    <a href="https://www.marca.com/">Marcas </a>
-  </div>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" >
+            <div class="container-fluid">
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="menu">
+                <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Categoria</a>
+                </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Novedades</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Oferta</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Marcas</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </div>
+    
+    <div>
+
+        <style>
+            .menu {
+                list-style: none;
+                background-color: #FFFFFF;
+                width: 100%;
+                max-width: 1200px;
+                margin: auto;
+                padding: 10px;
+                color: #5E72E4;
+            }
+
+            .menu li a {
+                text-decoration: none;
+                color: #5E72E4;
+                 padding: 5px;
+                display: block;
+            }
+
+            .menu li{
+            display: inline-block;
+         text-align: center;
+        }
+
+        .menu li a:hover{
+        background: #FFFFFF;
+        font-weight: bold;
+        }
+        </style>
+
+    </div>
+   
     </br>
 
     <div class="row">
