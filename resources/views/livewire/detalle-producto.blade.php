@@ -1,4 +1,8 @@
-<div class="modal" tabindex="-1" id="detalleProducto" style="background-color: #C1C8CB ; color:#000000">
+
+
+
+<div  wire:ignore.self class="modal" tabindex="-1" id="detalleProducto"
+ style="background-color: #C1C8CB ; color:#000000" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

@@ -27,6 +27,7 @@ class Index extends Component
     }
 
     public function verDetalle(){
+        
         $this->emit("verProducto");
     }
 }
