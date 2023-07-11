@@ -25,4 +25,8 @@ class Index extends Component
             'products' => Producto::all()
         ]);
     }
+
+    public function verDetalle(){
+        $this->emit("verProducto");
+    }
 }

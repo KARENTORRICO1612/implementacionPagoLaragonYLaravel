@@ -16,6 +16,9 @@ class Show extends Component
 
     public function render()
     {
-        return view('livewire.product.show');
+        return view('livewire.Product.Show')
+        ->extends('layouts.app')
+        ->section('content');
+
     }
 }
