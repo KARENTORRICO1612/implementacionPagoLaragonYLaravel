@@ -9,7 +9,7 @@
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-
+  
   @endif
 
   {{-- AÑADIENDO CARRUSEL --}}
@@ -139,18 +139,21 @@
           @foreach ($products as $product )
           <div class="col-sm-4 mb-2">
             <div class="card" style="width:353.24" ; height="198.69">
-              {{--
-              href="{{route('products.show',['product'=>$product->slug]) }}" --}}
-              <a  style="background-color: #f4ebeb">
-                <span>
-                  <center>
-                    <img wire:click="verDetalle" src="{{asset('storage/producto/pc.jpg')}}" alt="Card image cap" height="198.69" width="353.24"
-                      class="rounded" style="background-color: #f4ebeb" class="img-fluid" alt="Responsive image">
-                  </center>
-                </span>
-                {{-- <img class="card-img-top" src="{{ asset('storage/producto' .$product->thumbnail )}}"
-                  alt="Card image cap"> --}}
+
+                <a href="{{route('products.show',['product'=>$product->slug]) }}" style="background-color: #f4ebeb">
+                  <span>
+                     <center>
+                      <img src="{{asset('storage/producto/pc.jpg')}}" 
+                      alt="Card image cap" height="198.69"
+                      width="353.24"   class="rounded" style="background-color: #f4ebeb"
+                       class="img-fluid" alt="Responsive image">
+                     </center>
+                  </span>
+                  {{-- <img class="card-img-top" src="{{ asset('storage/producto' .$product->thumbnail )}}"
+                      alt="Card image cap"> --}}
               </a>
+    
+
               <center>
                 <div class="card-body" style="background-color: #f4ebeb">
                   <h5 class="card-title font-weight-bold">${{ $product->price }}<sup>00</sup></h5>
@@ -159,10 +162,11 @@
 
                   <div>
                     <button style="background-color: #5E72E4; color:#FFFFFF; width:175.36px; height:40px" class="btn"
-                      wire:click="addToCart('{{ $product->slug }}')">Add to
-                      cart</button>
-
+                      wire:click="addToCart('{{ $product->slug }}')">Add to cart</button>
                   </div>
+
+                  </br>
+
                 </div>
               </center>
             </div>
@@ -181,16 +185,26 @@
     </div>
 
 
-    @include('livewire.detalle-producto')
+    @include('livewire.detalleproducto')
   </div>
+</div>
+
+@section('javascript')
+
+{{-- AGREGANDO MODAL --}}
+{{-- <script src="{{asset('js/jquery-3.1.1.min.js')}}"></script>
+<script src="{{asset('js/jquery-ui.js')}}"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+
+  window.livewire.on('verProductoverProducto', () => {
+    $('#detalleProducto').modal('show');
+});
+});
+
+</script> --}}
 
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function(){
 
-    window.livewire.on('verProductoverProducto', () => {
-      $('#detalleProducto').modal('show');
-  });
-  });
- 
-  </script>
+@endsection

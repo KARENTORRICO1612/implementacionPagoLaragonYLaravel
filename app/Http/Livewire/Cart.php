@@ -31,4 +31,6 @@ class Cart extends Component
     {
         return view('livewire.cart');
     }
+
+ 
 }
