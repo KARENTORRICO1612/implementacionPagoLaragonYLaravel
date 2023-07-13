@@ -59,6 +59,8 @@
                         <li class="nav-item">
                             <a class="nav-link" style="color: #ffffff" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
+
+                       
                         @endif
 
                         @if (Route::has('register'))
@@ -66,16 +68,30 @@
                             <a class="nav-link" style="color: #ffffff" href="{{ route('register') }}">{{ __('Register')
                                 }}</a>
                         </li>
+
+                        {{-- <livewire:search> --}}
+
+                        {{-- BUSCADOR QUE APARECE EN EL MENU DE REGISTRO --}}
+
+                        {{-- <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search"   placeholder="Search" aria-label="Search">
+                            <button class="btn bs-info-text-emphasis" style="color: white" type="submit"><i class="fas fa-search"></i></button>
+                        </form> --}}
+
                         @endif
 
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn bs-info-text-emphasis" style="color: white" type="submit"><i class="fas fa-search"></i></button>
-                          </form>
+
+                       
                           
                         @else
+                        {{-- BUSCADOR QUE APARECE EN EL NAVIGATION ANTES DEL NOMBRE --}}
+                        {{-- <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn bs-info-text-emphasis" style="color: white" type="submit"><i class="fas fa-search"></i></button>
+                        </form> --}}
+                        
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                            <a style="color: #ffffff" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
@@ -91,6 +107,9 @@
                                 </form>
                             </div>
                         </li>
+
+                      
+                        
                         @endguest
                     </ul>
                 </div>
@@ -110,6 +129,12 @@
     @livewireScripts
 
     <script src="https://use.fontawesome.com/293dbc87e8.js"></script>
+
+
+
+
+
+
 
 </body>
 

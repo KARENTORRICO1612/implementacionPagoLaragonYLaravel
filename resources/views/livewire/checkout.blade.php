@@ -38,8 +38,8 @@
 
     @endif
 
-
-    <h2 class="text-center">Resumen productos</h2>
+</br>
+    {{-- <h2 class="text-center">Resumen productos</h2> --}}
 
     <div class="row">
 
@@ -53,13 +53,13 @@
 
                         <thead class="text-while">
                             <tr>
-                                <th scope="col" style="background: #5E72E4">#</th>
-                                <th scope="col" style="background: #5E72E4">Nombre</th>
-                                <th scope="col" style="background: #5E72E4">Producto</th>
-                                <th scope="col" style="background: #5E72E4">Precio</th>
-                                <th scope="col" style="background: #5E72E4">Cantidad</th>
-                                <th scope="col" style="background: #5E72E4">Subtotal</th>
-                                <th scope="col" style="background: #5E72E4">Eliminar</th>
+                                <th scope="col" style="background: #5E72E4; color:#FFFFFF">#</th>
+                                <th scope="col" style="background: #5E72E4; color:#FFFFFF">Nombre</th>
+                                <th scope="col" style="background: #5E72E4; color:#FFFFFF">Producto</th>
+                                <th scope="col" style="background: #5E72E4; color:#FFFFFF">Precio</th>
+                                <th scope="col" style="background: #5E72E4; color:#FFFFFF">Cantidad</th>
+                                <th scope="col" style="background: #5E72E4; color:#FFFFFF">Subtotal</th>
+                                <th scope="col" style="background: #5E72E4; color:#FFFFFF">Eliminar</th>
                             </tr>
                         </thead>
 
@@ -82,9 +82,9 @@
 
                             <tr>
 
-                                <td colspan="5" style="background-color: #5E72E4" class="font-weight-bold">Total</td>
+                                <td colspan="5" style="background-color: #5E72E4; color:#FFFFFF" class="font-weight-bold">Total</td>
 
-                                <td colspan="2" style="background-color: #5E72E4" class="font-weight-bold">{{
+                                <td colspan="2" style="background-color: #5E72E4; color:#FFFFFF" class="font-weight-bold">{{
                                     $products->sum('price') }} $ </td>
                             </tr>
                         </tbody>

@@ -43,6 +43,8 @@ Route::get('/checkout',Checkout::class)->name('checkout');
 Route::get('/paypal/payment', [App\Http\Controllers\PaymentController::class, 'paypalPaymentRequest'])->name('paypal.payment');
 Route::get('/paypal/checkout/{status}', [App\Http\Controllers\PaymentController::class, 'paypalCheckout'])->name('paypal.checkout');
 
+
+
 // Route::get('/paypal/pay', 'PaymentController@payWithPayPal');
 // Route::get('/paypal/status', 'PaymentController@payPalStatus');
 

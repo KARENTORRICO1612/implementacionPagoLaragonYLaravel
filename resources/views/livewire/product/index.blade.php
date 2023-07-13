@@ -1,3 +1,5 @@
+
+
 <div>
 
   @if(session()->has('message'))
@@ -11,6 +13,16 @@
   </div>
   
   @endif
+
+  {{-- AÑADIENDO BUSCADOR --}}
+
+  <div  class="d-flex justify-content-end pb-2" style="background-color:#5E72E4">
+    <form class="d-flex" role="search">
+      <input   class="form-control" type="search" wire:model='search'  placeholder="Search" aria-label="Search">
+      <button class="btn bs-info-text-emphasis" style="color: white" type="submit"><i class="fas fa-search"></i></button>
+  </form>
+  </div>
+
 
   {{-- AÑADIENDO CARRUSEL --}}
   <div id="carouselExample" class="carousel slide">
@@ -131,7 +143,6 @@
   </br>
 
 
-
   <div id="carouselExample" class="carousel slide">
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -139,6 +150,9 @@
           @foreach ($products as $product )
           <div class="col-sm-4 mb-2">
             <div class="card" style="width:353.24" ; height="198.69">
+              <div>
+                <h5 class="card-title font-weight-bold" style="text-align: center">{{ $product->name }}</h5>
+              </div>
 
                 <a href="{{route('products.show',['product'=>$product->slug]) }}" style="background-color: #f4ebeb">
                   <span>

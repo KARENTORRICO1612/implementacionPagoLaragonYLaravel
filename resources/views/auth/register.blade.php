@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
+
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header" style="background-color: #5E72E4 ; color:#ffffff">{{ __('CLIENTE | CREAR') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -61,11 +63,16 @@
                             </div>
                         </div>
 
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
+                        <div class="row ">
+                            <div class="col d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button type="submit" class="btn" style="background-color: #C1C8CB; color:#ffffff">
+                                    {{ __('CANCELAR') }}
                                 </button>
+
+                                <button type="submit" class="btn btn-primary" style="background-color:#5E72E4; color:#ffffff">
+                                    {{ __('GUARDAR') }}
+                                </button>
+
                             </div>
                         </div>
                     </form>
